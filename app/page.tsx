@@ -10,17 +10,17 @@ export default function CreativeAgencyWebsite() {
 
   const slides = [
     {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-edLtZqO18NSXUEe650DTu0atRUCc38.png",
+      image: "https://i.pinimg.com/736x/5e/ee/ee/5eeeeeae0d04516a008fe3c168ce21c9.jpg",
       title: "Enjoy the space",
       subtitle: "Artwork preview",
     },
     {
-      image: "https://thumbs.dreamstime.com/b/cartoon-superhero-robot-horns-muscular-body-isolated-white-background-cartoon-superhero-robot-horns-305994091.jpg",
+      image: "https://i.pinimg.com/1200x/ed/08/c2/ed08c20a856816d56a5cfe90fa30abe0.jpg",
       title: "Creative Design",
       subtitle: "Design preview",
     },
     {
-      image: "https://thumbs.dreamstime.com/b/super-robot-fly-red-cloak-d-illustration-85593996.jpg",
+      image: "https://i.pinimg.com/1200x/88/33/26/88332618109eb710cecbf5db7c75a36e.jpg",
       title: "Digital Innovation",
       subtitle: "Innovation preview",
     },
@@ -146,7 +146,7 @@ export default function CreativeAgencyWebsite() {
         </div>
 
         {/* Right Side - Image Slider */}
-        <div className="flex-1 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
+        <div className="flex-1 bg-white  relative overflow-hidden">
           {/* Stars Background */}
           <div className="absolute inset-0">
             {[...Array(50)].map((_, i) => (
@@ -163,7 +163,9 @@ export default function CreativeAgencyWebsite() {
           </div>
 
           {/* Image Slider */}
+          {/* Ubah ini untuk memastikan container gambar memenuhi tinggi penuh */}
           <div className="relative h-full flex items-center justify-center">
+            {/* Ubah ini menjadi w-full h-full untuk setiap slide */}
             <div className="relative w-full h-full">
               {slides.map((slide, index) => (
                 <div
@@ -173,20 +175,21 @@ export default function CreativeAgencyWebsite() {
                   }`}
                 >
                   {/* Main astronaut image */}
-                  <div className="relative mb-8">
+                  {/* Hapus div ini, dan terapkan styling langsung ke img */}
+                  {/* <div className="relative mb-8"> */}
                     <img
                       src={
                         index === 0
-                          ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-edLtZqO18NSXUEe650DTu0atRUCc38.png"
+                          ? "https://i.pinimg.com/736x/5e/ee/ee/5eeeeeae0d04516a008fe3c168ce21c9.jpg"
                           : slide.image
                       }
                       alt={`Slide ${index + 1}`}
-                      className="w-80 h-80 object-contain"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
-                  </div>
+                  {/* </div> */}
 
                   {/* Bottom text */}
-                  <div className="absolute bottom-16 left-8 text-white">
+                  <div className="absolute bottom-16 left-8 text-white z-10"> {/* Tambahkan z-10 agar teks di atas gambar */}
                     <p className="text-xs opacity-75 mb-1 tracking-wider">{slide.subtitle.toUpperCase()}</p>
                     <h2 className="text-xl font-semibold">{slide.title}</h2>
                   </div>
@@ -195,7 +198,7 @@ export default function CreativeAgencyWebsite() {
             </div>
 
             {/* Slide Indicators */}
-            <div className="absolute bottom-8 right-8 flex space-x-2">
+            <div className="absolute bottom-8 right-8 flex space-x-2 z-10"> {/* Tambahkan z-10 agar indikator di atas gambar */}
               {slides.map((_, index) => (
                 <button
                   key={index}
