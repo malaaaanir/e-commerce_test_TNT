@@ -50,14 +50,14 @@ export default function CreativeAgencyWebsite() {
       icon: <Code className="w-8 h-8 text-green-500" />,
       title: "Website Development",
       description:
-        "Sed ut perspiciatis unde omni iste natus error sit volunteer accusantum doloremque. Ut perspiciatis unde omni iste natus error sit volunteer accusantum doloremque.",
+        "Sed ut perspiciatis unde omni iste natus error sit volunteer accusantum doloremque.",
     },
   ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="flex items-center px-8 py-6 bg-white">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center px-8 py-6 bg-white shadow-sm">
         <div className="flex items-center space-x-8">
           <div className="text-2xl font-bold text-black">TNT</div>
           <div className="hidden md:flex space-x-8">
